@@ -14,7 +14,7 @@ Console.OutputEncoding = Encoding.UTF8;
 
 // Cấu 1 liên quan tới C - Create
 //Dùng list để tạo 5 employy trong đó 4 employee là chín thức và 1 employ là thời vụ
-
+#region list of employee
 List<Employee> employees = new List<Employee>();
 FulltimeEmployee e1 = new FulltimeEmployee();
 e1.Id = 1;
@@ -47,8 +47,9 @@ e5.IdCard = "127";
 e5.workingHours = 2;
 e5.BirthDate = new DateTime(1996, 9, 25);
 employees.Add(e5);
-
+#endregion
 //câu 2 : R -> Xuất toàn bộ nhân sự:
+#region Display all employees
 // Cách 1
 Console.WriteLine("Cách 1/Danh sách nhân sự:");
 employees.ForEach(e => Console.WriteLine(e));
@@ -58,9 +59,10 @@ foreach ( var e in employees)
 {
     Console.WriteLine(e);
 }
-
+#endregion
 // câu 3 : R -> lọc ra nhân sự chính thức và tính tổng lương
 //cách 1: dùng cách thông thường:
+#region Filter fulltime employees and calculate total salary
 List<FulltimeEmployee> fe_list = new List<FulltimeEmployee>();
 foreach (var e in employees)
 {
@@ -84,8 +86,9 @@ fe_list2.ForEach(e => Console.WriteLine(e));
 //Tổng lương
 double sum_salary = fe_list.Sum(e => e.calSalary());
 Console.WriteLine("Tổng lương nhân sự chính thức: " + sum_salary);
-
+#endregion
 //Câu 4 : R-> sấp xếp danh sách nhân sự theo ngày tháng năm sinh
+#region Sort employees by birth date
 for (int i =  0; i < employees.Count; i++)
 {
     for (int j = i +1; j < employees.Count; j++)
@@ -103,5 +106,88 @@ for (int i =  0; i < employees.Count; i++)
 }
 Console.WriteLine("Danh sách nhân sự sắp xếp theo ngày tháng năm sinh:");
 employees.ForEach(e=> Console.WriteLine(e));
-
+#endregion
 // bổ sung sửa và xóa
+
+// Câu 5: U - Update -> chỉnh sửa thông tin nhân sự
+#region Update employee
+int id;
+Employee? emp = null; //- Without ?: Employee emp → emp must always hold a valid Employee instance.
+                      //- With ?: Employee? emp → emp can be null.
+do
+{
+    Console.WriteLine("Nhập Id nhân sự cần chỉnh sửa:");
+    if(!int.TryParse(Console.ReadLine(), out  id) || id < 1 || id > employees.Count)
+    {
+        Console.WriteLine("Id không hợp lệ, vui lòng nhập lại!");
+        continue;
+    }
+   
+   
+
+} while (id < 1 || id > employees.Count);
+// it will try to parse the string into int, if either the input id is smaller than 1
+// as id starts from 1 or the input id is greater than the cout, this will ask the user to input again
+foreach (var e in employees) 
+{
+    if (e.Id == id) // it will compare the input id with the id of each employee in the list
+    {
+        emp = e; // if the input id matches with the id of an employee, it will assign that employee to emp 
+        break;   // and exit the loop
+    }
+}
+
+if (emp != null)
+{
+    Console.WriteLine("Nhập tên mới cho nhân sự: ");
+        emp.Name = Console.ReadLine();
+    Console.WriteLine("Nhập IdCard mới cho nhân sự: ");
+    emp.IdCard = Console.ReadLine();
+    Console.WriteLine("Nhập ngày tháng năm sinh mới cho nhân sự (dd/MM/yyyy): ");
+    emp.BirthDate = DateTime.ParseExact(Console.ReadLine(), "d/M/yyyy", null);
+    Console.WriteLine("Thông tin của Nhân sự sau khi được chỉnh sửa: ");
+    Console.WriteLine(emp);
+} else
+{
+    Console.WriteLine($"Không tìm thấy nhân sự với Id {id} đã nhập.");
+}
+Console.WriteLine("Danh sách nhân sự sau khi chỉnh sửa:");
+employees.ForEach(e => Console.WriteLine(e));
+#endregion
+// Câu 6: D - Delete -> Xóa nhân sự
+#region Delete employee
+
+
+do
+{
+    Console.WriteLine("Nhập Id nhân sự cần xóa:");
+    if (!int.TryParse(Console.ReadLine(), out id) || id < 1 || id > employees.Count)
+    {
+        Console.WriteLine("Id không hợp lệ, vui lòng nhập lại!");
+        continue;
+    }
+
+
+
+} while (id < 1 || id > employees.Count);
+
+emp = null;
+foreach (var e in  employees)
+{
+    if (e.Id == id)
+    {
+        emp = e;
+        break;
+    }
+}
+if (emp != null)
+{
+    employees.Remove(emp);
+    Console.WriteLine($"Đã xóa nhân sự với Id {id}.");
+}else
+{
+    Console.WriteLine($"Không tìm thấy nhân sự với Id {id} đã nhập.");
+}
+Console.WriteLine("Danh sách nhân sự sau khi xóa:");
+employees.ForEach (e => Console.WriteLine(e));
+#endregion
