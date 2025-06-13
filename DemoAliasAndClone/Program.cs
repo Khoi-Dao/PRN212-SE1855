@@ -27,8 +27,56 @@ s1 = s2;
 //có thêm s1 quản lý ==> alias (>= 2 đối tượng quản lý)
 // chỉ cần 1 đối tướng bị  đổi thì các đối tượng khác đều bị đổi
 s2.Name="Charlie";
-Console.WriteLine(s1.Name); 
+Console.WriteLine(s1.Name);
 // Id: 2, Name: Charlie
 //(2) ô nhớ lúc trước s1 quản lý giờ không còn đối tượng nào quản lý 
 // thì lúc này HĐH tự động thu hồi ô nhớ: Automatic Garbage Collection
 //tức là ta không thể truy suất để lấy lại giá trị s1 có id - 1 , name Alice
+
+Product p1 = new Product()
+{
+    Id = 1,
+    Name = "Laptop",
+    Quantity = 10,
+    Price = 20.00
+};
+Product p2 = new Product()
+{
+    Id = 2,
+    Name = "Mouse",
+    Quantity = 100,
+    Price = 5.00
+};
+
+p1 = p2;
+
+p2.Name = "Keyboard";
+p2.Price = 15.00;
+
+Console.WriteLine(p1); // Keyboard
+Product p3 = new Product()
+{
+    Id = 3,
+    Name = "Monitor",
+    Quantity = 50,
+    Price = 200.00
+};
+Product p4 = new Product()
+{
+    Id = 4,
+    Name = "Printer",
+    Quantity = 30,
+    Price = 150.00
+};
+
+Product p5 = p3;
+p3 = p4;
+Console.WriteLine(p5);
+Product p6 = p5.Clone(); // sao chép toàn bộ dự liệu ổ nhớ mà p4 đang quản lý
+                         // sang ô nhớ mới và giao cho p6 quản lý
+                         // lúc này không phải alias vì chúng quản lý 2 ô nhớ khác nhau
+Console.WriteLine(p6);
+Console.WriteLine(p5);
+p5.Name="Scanner";
+Console.WriteLine(p6); // không bị ảnh hưởng vì p6 quản lý ô nhớ khác với p4
+Console.WriteLine(p5); // Scanner
