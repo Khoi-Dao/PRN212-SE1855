@@ -21,14 +21,14 @@
             <Button Name="btnTong" Width="100" Margin="10"
                 Click="BtnTong_Click">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="pack://siteoforigin:,,,/Images/sum.jpg" />
+                    <Image Source="pack://siteoforigin:,,,/Images/sum.png" Width="20" Height="20" />
                     <TextBlock Margin="5,0,0,0">Tổng</TextBlock>
                 </StackPanel>
             </Button>
             <Button Name="btnThoat" Width="100" Margin="10"
                 Click="BtnThoat_Click">
                 <StackPanel Orientation="Horizontal" ContextMenuClosing="StackPanel_ContextMenuClosing">
-                    <Image Source="pack://siteoforigin:,,,/Images/thoat.png" ContextMenuClosing="Image_ContextMenuClosing" />
+                    <Image Source="pack://siteoforigin:,,,/Images/thoat.png" ContextMenuClosing="Image_ContextMenuClosing" Width="20" Height="20" />
                     <TextBlock Margin="5,0,0,0">Thoát</TextBlock>
                 </StackPanel>
             </Button>

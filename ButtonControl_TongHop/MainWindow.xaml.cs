@@ -29,8 +29,6 @@ namespace ButtonControl_TongHop
             tbKetQua.Text = tong + "";
         }
 
-
-
         private void BtnThoat_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -40,10 +38,10 @@ namespace ButtonControl_TongHop
         {
             Close();
         }
+
         private void Image_ContextMenuClosing(object sender, ContextMenuEventArgs e)
         {
             Close();
         }
-
     }
 }

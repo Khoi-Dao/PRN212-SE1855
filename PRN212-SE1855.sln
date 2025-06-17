@@ -75,6 +75,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWPF", "HelloWPF\HelloW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButtonControl_TongHop", "ButtonControl_TongHop\ButtonControl_TongHop.csproj", "{9D83D236-D7BA-42D2-9A18-0C8562808016}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckBoxControlEvent", "CheckBoxControlEvent\CheckBoxControlEvent.csproj", "{CADD0568-5B81-4064-BA9C-4D434EA110F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioButtonControl", "RadioButtonControl\RadioButtonControl.csproj", "{E8EDC3B2-CA62-496F-A764-D4DBAE0EF3A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -209,6 +213,14 @@ Global
 		{9D83D236-D7BA-42D2-9A18-0C8562808016}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D83D236-D7BA-42D2-9A18-0C8562808016}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D83D236-D7BA-42D2-9A18-0C8562808016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CADD0568-5B81-4064-BA9C-4D434EA110F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CADD0568-5B81-4064-BA9C-4D434EA110F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CADD0568-5B81-4064-BA9C-4D434EA110F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CADD0568-5B81-4064-BA9C-4D434EA110F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8EDC3B2-CA62-496F-A764-D4DBAE0EF3A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8EDC3B2-CA62-496F-A764-D4DBAE0EF3A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8EDC3B2-CA62-496F-A764-D4DBAE0EF3A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8EDC3B2-CA62-496F-A764-D4DBAE0EF3A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -232,6 +244,8 @@ Global
 		{8FB9DD0F-3308-4663-8E01-DDAD2F946AA4} = {BB140C23-C04F-4E2B-9457-40F2105E08CB}
 		{226D1BC4-ACF0-48F3-B209-E4C8B4D05557} = {3C30B26E-C002-4E11-BBE3-4D279BA68E82}
 		{9D83D236-D7BA-42D2-9A18-0C8562808016} = {3C30B26E-C002-4E11-BBE3-4D279BA68E82}
+		{CADD0568-5B81-4064-BA9C-4D434EA110F6} = {3C30B26E-C002-4E11-BBE3-4D279BA68E82}
+		{E8EDC3B2-CA62-496F-A764-D4DBAE0EF3A6} = {3C30B26E-C002-4E11-BBE3-4D279BA68E82}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C8503E5F-9D6E-4F4E-B86E-F5E3D56725C0}
